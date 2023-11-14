@@ -2,7 +2,6 @@ package com.wait.sellsystem.config;
 
 import cn.dev33.satoken.config.SaTokenConfig;
 import cn.dev33.satoken.interceptor.SaInterceptor;
-import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
 import cn.dev33.satoken.jwt.StpLogicJwtForStateless;
 import cn.dev33.satoken.router.SaRouter;
 import cn.dev33.satoken.stp.StpLogic;
@@ -56,9 +55,9 @@ public class WebConfig implements WebMvcConfigurer {
         // token名称 (同时也是cookie名称)
         config.setTokenName("Authorization");
         // token有效期，单位s 默认30天，不支持自动续签
-        config.setTimeout(24 * 30 * 60 * 60);
+        config.setTimeout(2 * 60 * 60);
         // token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
-        config.setActiveTimeout(60 * 60);
+        config.setActiveTimeout(-1);
         // 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
         config.setIsConcurrent(false);
         // 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
@@ -94,7 +93,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new SaInterceptor(handler -> {
             // 指定一条 match 规则
             SaRouter.match("/**")    // 拦截的 path 列表，可以写多个 */
-                    .notMatch("/backstageLogin/*","/wechatLogin") // 排除掉的 path 列表，可以写多个
+                    .notMatch("/user/login","/user/register") // 排除掉的 path 列表，可以写多个
                     .notMatch(EXCLUDE_PATH_PATTERNS)
                     .check(r -> StpUtil.checkLogin());        // 要执行的校验动作，可以写完整的 lambda 表达式
         })).addPathPatterns("/**");

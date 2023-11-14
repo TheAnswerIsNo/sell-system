@@ -68,7 +68,9 @@ create table user
     username  varchar(50)  not null comment '账号',
     password  varchar(255) not null comment '密码',
     name      varchar(50)  not null comment '姓名',
-    telephone varchar(20)  not null comment '手机号'
+    telephone varchar(20)  not null comment '手机号',
+    constraint user_pk
+        unique (username)
 )
     comment '用户表';
 

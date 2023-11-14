@@ -108,9 +108,8 @@
                 <includes>
                     <include>*.yml</include>
                     <include>*.properties</include>
-                    <include>*.sql</include>
                     <include>db.migration/*.sql</include>
-                    <include>*.xml</include>
+                    <include>mapper/*.xml</include>
                 </includes>
             </resource>
         </resources>
