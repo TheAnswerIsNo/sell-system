@@ -1,4 +1,4 @@
-package com.wait.sellsystem.domain.enumerattion;
+package com.wait.sellsystem.domain.enumeration;
 
 import lombok.Getter;
 

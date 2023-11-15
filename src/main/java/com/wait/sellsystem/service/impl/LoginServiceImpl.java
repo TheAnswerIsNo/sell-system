@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.wait.sellsystem.dao.UserMapper;
 import com.wait.sellsystem.domain.dto.login.LoginDTO;
 import com.wait.sellsystem.domain.entity.User;
-import com.wait.sellsystem.domain.enumerattion.PrefixEnum;
+import com.wait.sellsystem.domain.enumeration.PrefixEnum;
 import com.wait.sellsystem.domain.param.login.LoginParam;
 import com.wait.sellsystem.domain.param.login.RegisterParam;
 import com.wait.sellsystem.service.LoginService;
