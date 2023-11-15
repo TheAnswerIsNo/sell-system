@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -30,14 +31,14 @@ public class LoginController {
     }
 
     @ApiOperation("登录")
-    @RequestMapping("/login")
+    @RequestMapping(method = RequestMethod.POST,value = "/login")
     public SaResult login(@RequestBody LoginParam loginParam){
         LoginDTO loginDTO = loginService.login(loginParam);
         return new SaResult(SaResult.CODE_SUCCESS,"登录成功",loginDTO);
     }
 
     @ApiOperation("注册")
-    @RequestMapping("/register")
+    @RequestMapping(method = RequestMethod.POST,value = "/register")
     public SaResult register(@RequestBody RegisterParam registerParam){
         int result = loginService.register(registerParam);
         if (result > 0){

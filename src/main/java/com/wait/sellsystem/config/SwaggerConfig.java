@@ -46,7 +46,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("sell-system")
-                .description("售卖系统接口 2023-11-10")
+                .description("售卖系统接口 2023-11-17")
                 .version("1.0")
                 .build();
     }
