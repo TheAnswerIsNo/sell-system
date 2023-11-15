@@ -3,7 +3,6 @@ package com.wait.sellsystem.controller;
 import cn.dev33.satoken.util.SaResult;
 import com.wait.sellsystem.domain.dto.accessory.AccessoryListDTO;
 import com.wait.sellsystem.domain.param.accessory.AccessoryAddParam;
-import com.wait.sellsystem.domain.param.commodities.CommoditiesAddParam;
 import com.wait.sellsystem.service.AccessoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
